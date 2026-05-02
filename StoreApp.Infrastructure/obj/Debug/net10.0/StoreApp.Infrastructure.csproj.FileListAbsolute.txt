@@ -17,3 +17,4 @@ G:\StoreApp\StoreApp.Infrastructure\obj\Debug\net10.0\refint\StoreApp.Infrastruc
 G:\StoreApp\StoreApp.Infrastructure\obj\Debug\net10.0\StoreApp.Infrastructure.pdb
 G:\StoreApp\StoreApp.Infrastructure\obj\Debug\net10.0\StoreApp.Infrastructure.genruntimeconfig.cache
 G:\StoreApp\StoreApp.Infrastructure\obj\Debug\net10.0\ref\StoreApp.Infrastructure.dll
+G:\StoreApp\StoreApp.Infrastructure\obj\Debug\net10.0\StoreApp.Infrastructure.sourcelink.json

@@ -15,3 +15,4 @@ G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.dll
 G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\refint\StoreApp.Services.dll
 G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.pdb
 G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\ref\StoreApp.Services.dll
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.sourcelink.json

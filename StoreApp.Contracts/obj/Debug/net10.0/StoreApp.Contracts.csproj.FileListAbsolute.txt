@@ -9,3 +9,4 @@ G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.dll
 G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\refint\StoreApp.Contracts.dll
 G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.pdb
 G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\ref\StoreApp.Contracts.dll
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.sourcelink.json
