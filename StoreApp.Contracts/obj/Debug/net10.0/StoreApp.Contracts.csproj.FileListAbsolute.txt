@@ -1,0 +1,11 @@
+G:\StoreApp\StoreApp.Contracts\bin\Debug\net10.0\StoreApp.Contracts.deps.json
+G:\StoreApp\StoreApp.Contracts\bin\Debug\net10.0\StoreApp.Contracts.dll
+G:\StoreApp\StoreApp.Contracts\bin\Debug\net10.0\StoreApp.Contracts.pdb
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.AssemblyInfoInputs.cache
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.AssemblyInfo.cs
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.csproj.CoreCompileInputs.cache
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.dll
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\refint\StoreApp.Contracts.dll
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\StoreApp.Contracts.pdb
+G:\StoreApp\StoreApp.Contracts\obj\Debug\net10.0\ref\StoreApp.Contracts.dll

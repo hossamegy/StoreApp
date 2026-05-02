@@ -1,0 +1,17 @@
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.csproj.AssemblyReference.cache
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.GeneratedMSBuildEditorConfig.editorconfig
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.AssemblyInfoInputs.cache
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.AssemblyInfo.cs
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.csproj.CoreCompileInputs.cache
+G:\StoreApp\StoreApp.Services\bin\Debug\net10.0\StoreApp.Services.deps.json
+G:\StoreApp\StoreApp.Services\bin\Debug\net10.0\StoreApp.Services.dll
+G:\StoreApp\StoreApp.Services\bin\Debug\net10.0\StoreApp.Services.pdb
+G:\StoreApp\StoreApp.Services\bin\Debug\net10.0\StoreApp.Contracts.dll
+G:\StoreApp\StoreApp.Services\bin\Debug\net10.0\StoreApp.Core.dll
+G:\StoreApp\StoreApp.Services\bin\Debug\net10.0\StoreApp.Core.pdb
+G:\StoreApp\StoreApp.Services\bin\Debug\net10.0\StoreApp.Contracts.pdb
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.7B51857F.Up2Date
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.dll
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\refint\StoreApp.Services.dll
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\StoreApp.Services.pdb
+G:\StoreApp\StoreApp.Services\obj\Debug\net10.0\ref\StoreApp.Services.dll
