@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using StoreApp.Contracts.Products;
+using StoreApp.Contracts.Products.Requests;
 using StoreApp.Core.Entities.Products;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IServices;
 
 namespace StoreApp.API.Controllers;
 
@@ -19,7 +19,7 @@ public class CategoriesController : ControllerBase
     [HttpGet("All")]
     public async Task<IActionResult> GetAllCategories()
     {
-        var result = await _categoriesService.GetAllAsync();
+        var result = await _categoriesService.GetAllCategoriesAsync();
         return Ok(result);
     }
 

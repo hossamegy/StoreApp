@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StoreApp.Core.Entities.Users;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IRepository;
 using StoreApp.Infrastructure.Data;
 
 namespace StoreApp.Infrastructure.Repositories;

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StoreApp.Core.Entities.Products;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IRepository;
 using StoreApp.Infrastructure.Data;
 
 public class ProductRepository : IProductRepository
@@ -43,11 +43,15 @@ public class ProductRepository : IProductRepository
     {
         return await _productRepo.FindAsync(id);
     }
-    public async Task<IEnumerable<Product>> GetProductsByPaginationAsync(int take, int skip)
+    public async Task<IEnumerable<Product>> GetProductsByPaginationAsync(int skip, int take)
     {
         return await _productRepo
             .Skip(skip)
             .Take(take)
+            .Include(p => p.Category)
+            .Include(p => p.Brand)
+            .Include(p => p.ProductImages)
+
             .ToListAsync();
     }
 

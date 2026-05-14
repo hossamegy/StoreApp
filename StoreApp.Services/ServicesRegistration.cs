@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IServices;
 
 namespace StoreApp.Services;
 

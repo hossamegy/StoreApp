@@ -1,17 +1,22 @@
 using FluentValidation;
 using StoreApp.Contracts;
+using StoreApp.Contracts.Products.Responses;
 using StoreApp.Core.Entities.Products;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IRepository;
+using StoreApp.Core.Interfaces.IServices;
+using AutoMapper;
 
 namespace StoreApp.Services;
 
 public class BrandService : IBrandService
 {
     private readonly IBrandRepository _brandRepo;
+    private readonly IMapper _mapper;
     private readonly IValidator<Brands> _validator;
-    public BrandService(IBrandRepository brandRepo, IValidator<Brands> validator)
+    public BrandService(IBrandRepository brandRepo, IMapper mapper, IValidator<Brands> validator)
     {
         _brandRepo = brandRepo;
+        _mapper = mapper;
         _validator = validator;
     }
 
@@ -63,13 +68,13 @@ public class BrandService : IBrandService
             }    
     }
 
-    public async Task<Result<IEnumerable<Brands>>> GetAllAsync()
+    public async Task<Result<IEnumerable<BrandNameDto>>> GetAllBrandAsync()
     {
         var brands = await _brandRepo.GetAllAsync();
         if (brands == null)
-            return Result<IEnumerable<Brands>>.Failure("There is no brands in database");
- 
-        return Result<IEnumerable<Brands>>.Success(brands);    
+            return Result<IEnumerable<BrandNameDto>>.Failure("There is no brands in database");
+        var brandResposne = _mapper.Map<IEnumerable<BrandNameDto>>(brands);
+        return Result<IEnumerable<BrandNameDto>>.Success(brandResposne);    
     }
 
     public Task<Result<Brands>> GetByIdAsync(int id)

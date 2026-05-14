@@ -1,6 +1,6 @@
 using StoreApp.Core.Entities.Products;
 
-namespace StoreApp.Core.Interfaces;
+namespace StoreApp.Core.Interfaces.IRepository;
 
 public interface IBrandRepository
 {

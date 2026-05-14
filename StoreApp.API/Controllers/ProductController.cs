@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using StoreApp.API.ApiHandler;
-using StoreApp.Contracts.Products;
+using StoreApp.Contracts.Products.Requests;
 using StoreApp.Core.Entities.Products;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IServices;
 
 namespace StoreApp.API.Controllers;
 
@@ -23,7 +23,12 @@ public class ProductController : ControllerBase
         var result = await _productService.GetAllProductsAsync();
         return Ok(result);
     }
-
+    [HttpGet("pagination")]
+    public async Task<IActionResult> GetProductsByPagination(int skip, int take)
+    {
+        var result = await _productService.GetProductsByPaginationAsync(skip, take);
+        return Ok(result);
+    }
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {

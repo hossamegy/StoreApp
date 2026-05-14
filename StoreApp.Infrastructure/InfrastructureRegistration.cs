@@ -1,10 +1,12 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StoreApp.Core.Entities.Products;
 using StoreApp.Core.Entities.Users;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IRepository;
 using StoreApp.Core.validators;
 using StoreApp.Infrastructure.Data;
 using StoreApp.Infrastructure.Repositories;
@@ -29,6 +31,12 @@ public static class InfrastructureRegistration
         builder.Services.AddScoped<IValidator<Categories>, CategoryValidator>();
         builder.Services.AddScoped<IValidator<Brands>, BrandValidator>();
 
+    }
 
+    public static void AddDbContextRegistration(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddDbContext<AppDbContext>(op => op.UseSqlite(
+             builder.Configuration.GetConnectionString("DefaultConnection")
+         ));
     }
 }

@@ -1,17 +1,22 @@
+using AutoMapper;
 using FluentValidation;
 using StoreApp.Contracts;
+using StoreApp.Contracts.Products.Responses;
 using StoreApp.Core.Entities.Products;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IRepository;
+using StoreApp.Core.Interfaces.IServices;
 
 namespace StoreApp.Services;
 
 public class CategoriesService : ICategoriesService
 {
     private readonly ICategoriesRepository _categoriesRepo;
+    private readonly IMapper _mapper;
     private readonly IValidator<Categories> _validator;
-    public CategoriesService(ICategoriesRepository categoriesRepo, IValidator<Categories> validator)
+    public CategoriesService(ICategoriesRepository categoriesRepo, IMapper mapper, IValidator<Categories> validator)
     {
         _categoriesRepo = categoriesRepo;
+        _mapper = mapper;
         _validator = validator;
     }
 
@@ -63,13 +68,15 @@ public class CategoriesService : ICategoriesService
             }    
     }
 
-    public async Task<Result<IEnumerable<Categories>>> GetAllAsync()
+    public async Task<Result<IEnumerable<CategoryNameDto>>> GetAllCategoriesAsync()
     {
         var categories = await _categoriesRepo.GetAllAsync();
         if (categories == null)
-            return Result<IEnumerable<Categories>>.Failure("There is no categories in database");
- 
-        return Result<IEnumerable<Categories>>.Success(categories);    
+            return Result<IEnumerable<CategoryNameDto>>.Failure("There is no categories in database");
+     
+        var categoryResponse = _mapper.Map<IEnumerable<CategoryNameDto>>(categories);
+
+        return Result<IEnumerable<CategoryNameDto>>.Success(categoryResponse);    
     }
 
     public Task<Result<Categories>> GetByIdAsync(int id)

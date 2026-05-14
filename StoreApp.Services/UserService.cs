@@ -1,5 +1,6 @@
-using StoreApp.Core.Interfaces;
 using StoreApp.Core.Entities.Users;
+using StoreApp.Core.Interfaces.IServices;
+using StoreApp.Core.Interfaces.IRepository;
 
 namespace StoreApp.Services;
 

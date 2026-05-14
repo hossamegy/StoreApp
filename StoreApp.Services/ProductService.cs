@@ -1,17 +1,22 @@
+using AutoMapper;
 using FluentValidation;
 using StoreApp.Contracts;
+using StoreApp.Contracts.Products.Responses;
 using StoreApp.Core.Entities.Products;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IRepository;
+using StoreApp.Core.Interfaces.IServices;
 
 namespace StoreApp.Services;
 
 public class ProductService : IProductService
 {
     private readonly IProductRepository _productRepo;
+    private readonly IMapper _mapper;
     private readonly IValidator<Product> _validator;
-    public ProductService(IProductRepository productRepo, IValidator<Product> validator)
+    public ProductService(IProductRepository productRepo, IMapper mapper, IValidator<Product> validator)
     {
         _productRepo = productRepo;
+        _mapper = mapper;
         _validator = validator;
     }
 
@@ -94,7 +99,7 @@ public class ProductService : IProductService
                 new List<string>{ ex.Message });
         }
         }
-    public async Task<Result<IEnumerable<Product>>> GetProductsByPaginationAsync(int skip, int take)
+    public async Task<Result<IEnumerable<ProductResponse>>> GetProductsByPaginationAsync(int skip, int take)
     {
         if (skip < 0)
             skip = 0;
@@ -105,12 +110,12 @@ public class ProductService : IProductService
         try
         {
             var products = await _productRepo.GetProductsByPaginationAsync(skip, take);
-
-            return Result<IEnumerable<Product>>.Success(products, "Products retrieved successfully");
+        var productResponse = _mapper.Map<IEnumerable<ProductResponse>>(products);
+            return Result<IEnumerable<ProductResponse>>.Success(productResponse, "Products retrieved successfully");
         }
         catch (Exception ex)
         {
-            return Result<IEnumerable<Product>>.Failure(
+            return Result<IEnumerable<ProductResponse>>.Failure(
                 "Error occurred while retrieving products",
                 new List<string> { ex.Message });
         }

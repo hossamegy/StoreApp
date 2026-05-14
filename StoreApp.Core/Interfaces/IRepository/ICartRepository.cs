@@ -1,6 +1,6 @@
 using StoreApp.Core.Entities.Carts;
 
-namespace StoreApp.Core.Interfaces;
+namespace StoreApp.Core.Interfaces.IRepository;
 public interface ICartRepository
 {
     Task<IEnumerable<Cart>> GetAllCartsAsync();

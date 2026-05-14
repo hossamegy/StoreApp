@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ketUm5uZyD8=",
+  "dgSpecHash": "t3V7p5A6OZ8=",
   "success": true,
   "projectFilePath": "G:\\StoreApp\\StoreApp.Core\\StoreApp.Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Hossam\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Hossam\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Hossam\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\Hossam\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
     "C:\\Users\\Hossam\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
@@ -31,5 +33,18 @@
     "C:\\Users\\Hossam\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\10.0.7\\microsoft.extensions.options.configurationextensions.10.0.7.nupkg.sha512",
     "C:\\Users\\Hossam\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.7\\microsoft.extensions.primitives.10.0.7.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
+      "projectPath": "G:\\StoreApp\\StoreApp.Core\\StoreApp.Core.csproj",
+      "warningLevel": 1,
+      "filePath": "G:\\StoreApp\\StoreApp.Core\\StoreApp.Core.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

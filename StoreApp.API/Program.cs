@@ -1,50 +1,34 @@
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using StoreApp.Core.ConfigSettings;
+using StoreApp.API.Config;
 using StoreApp.Infrastructure;
 using StoreApp.Infrastructure.Data;
 using StoreApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.Configure<Jwt>(builder.Configuration.GetSection("Jwt"));
-var jwtSettings = builder.Configuration.GetSection("Jwt").Get<Jwt>();
-
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    { 
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-
-        ValidIssuer = jwtSettings!.Issuer,
-        ValidAudience = jwtSettings!.Audience,
-        IssuerSigningKey = new SymmetricSecurityKey(
-        Encoding.UTF8.GetBytes(jwtSettings!.Key)
-        )
-    };
-});
-
-builder.Services.AddDbContext<AppDbContext>(op => op.UseSqlite(
-    builder.Configuration.GetConnectionString("DefaultConnection")
-));
+builder.AddDbContextRegistration();
+builder.AddMapperConfig();
+builder.AddAuthConfig();
+builder.JsonResponseCamelCaseConfig();
 
 builder.AddInfrastructureRegistration();
 builder.AddServicesRegistration();
-builder.Services.AddControllers();
+
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -55,6 +39,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAngularApp");
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StoreApp.Core.Entities.Products;
-using StoreApp.Core.Interfaces;
+using StoreApp.Core.Interfaces.IRepository;
 using StoreApp.Infrastructure.Data;
 
 public class BrandRepository : IBrandRepository

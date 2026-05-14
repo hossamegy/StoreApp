@@ -1,5 +1,5 @@
 
-namespace StoreApp.Contracts.Products;
+namespace StoreApp.Contracts.Products.Requests;
 
 public class ProductRequest
 {

@@ -1,13 +1,14 @@
 using StoreApp.Core.Entities.Users;
 
-namespace StoreApp.Core.Interfaces ;
-public interface IUserService
+namespace StoreApp.Core.Interfaces.IRepository;
+
+public interface IUserRepository
 {
     Task<IEnumerable<User>> GetAllUsersAsync();
     Task<User?> GetByIdAsync(string id);
     Task<User?> GetByEmailAsync(string email);
-    Task<User> CreateAsync(string firstName, string lastName, string email, string password);
-
+    Task CreateAsync(User user);
     Task UpdateAsync(User user);
-    Task DeleteAsync(string id);
+    Task<bool> DeleteAsync(string id);
+    
 }
